@@ -14,9 +14,8 @@ func main() {
 	mio := NewMyIO(os.Stdin, os.Stdout)
 	defer mio.Flush()
 
-	s := mio.MustScanStr()
-
-	mio.Printf("%s\n", s)
+	i := mio.MustScanIntN(2)
+	mio.Printf("%d\n", i[0]+i[1])
 }
 
 //#--------------------------------------------------#
